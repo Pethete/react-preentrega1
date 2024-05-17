@@ -1,4 +1,5 @@
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 const NavBar = () => {
   return (
@@ -22,21 +23,19 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+              <Link to="/" className="nav-item">
+                <a className="nav-link active" aria-current="page">
                   Inicio
                 </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="#">
-                  Basicos
-                </a>
-              </li>
-              <li className="nav-item">
+              </Link>
+              <Link to="/category/basicos" className="nav-item">
+                <a className="nav-link active">Basicos</a>
+              </Link>
+              <Link to="/category/extras" className="nav-item">
                 <a className="nav-link active" href="#">
                   Extras
                 </a>
-              </li>
+              </Link>
               <li className="nav-item">
                 <a className="nav-link active" href="#">
                   Contactanos
