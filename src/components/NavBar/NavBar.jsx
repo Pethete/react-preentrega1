@@ -32,9 +32,7 @@ const NavBar = () => {
                 <a className="nav-link active">Basicos</a>
               </Link>
               <Link to="/category/extras" className="nav-item">
-                <a className="nav-link active" href="#">
-                  Extras
-                </a>
+                <a className="nav-link active">Extras</a>
               </Link>
               <li className="nav-item">
                 <a className="nav-link active" href="#">
