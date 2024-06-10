@@ -5,7 +5,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../../db/db.js";
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({ saludo }) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const { idCategory } = useParams();
 
@@ -40,7 +40,11 @@ const ItemListContainer = ({ saludo }) => {
   }, [idCategory]);
   return (
     <div className="item-list-container">
-      <h2 className="title-item-list-container"> {saludo} </h2>
+      <h2 className="title-item-list-container">
+        {idCategory
+          ? `Filtrado por categoria: ${idCategory}`
+          : "Bienvenidos a PhasmoStore"}{" "}
+      </h2>
       <ItemList products={products} />
     </div>
   );

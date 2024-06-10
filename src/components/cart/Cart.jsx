@@ -11,7 +11,9 @@ const Cart = () => {
     return (
       <div className="cart-empty">
         <h1>El carrito esta vacio</h1>
-        <Link to="/">Ver productos</Link>
+        <Link className="button-link" to="/">
+          Ver productos
+        </Link>
       </div>
     );
   }
@@ -36,8 +38,12 @@ const Cart = () => {
         </div>
       ))}
       <h2>Total de la compra: ${precioTotal()} </h2>
-      <Link>Continuar con mi compra</Link>
-      <button onClick={vaciarCarrito}>Vaciar carrito</button>
+      <Link to="/checkout" className="button-link">
+        Continuar con mi compra
+      </Link>
+      <div className="button-delente" onClick={vaciarCarrito}>
+        Vaciar carrito
+      </div>
     </div>
   );
 };
