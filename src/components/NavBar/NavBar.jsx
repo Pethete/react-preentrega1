@@ -9,7 +9,7 @@ const NavBar = () => {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <img src="/src/assets/logo_navbar.png" alt="" />
+          <img src="https://i.postimg.cc/Ny767pz7/logo-navbar.png" alt="" />
           <button
             className="navbar-toggler"
             type="button"
