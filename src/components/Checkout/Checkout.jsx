@@ -3,6 +3,8 @@ import Formulario from "./Formulario";
 import { CartContext } from "../../context/CartContext";
 import { addDoc, collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import db from "../../db/db.js";
+import validateForm from "../../utils/validationYup.js";
+import { toast } from "react-toastify";
 import "./checkout.css";
 
 const Checkout = () => {
@@ -31,6 +33,7 @@ const Checkout = () => {
       if (response.status === "success") {
         generateOrder(orden);
       } else {
+        toast.warning(response.message);
       }
     } catch (error) {
       console.log(error);
@@ -56,7 +59,9 @@ const Checkout = () => {
       setDoc(productoRef, {
         ...productoCarrito,
         stock: productoCarrito.stock - quantity,
-      });
+      })
+        .then(() => console.log("Stock actualizado"))
+        .catch((error) => console.log(error));
     });
   };
   return (
@@ -64,7 +69,7 @@ const Checkout = () => {
       {idOrden ? (
         <div className="order-generated">
           <h2>Orden generada con exito</h2>
-          <p> Id de la orden: {idOrden} </p>
+          <p> Felicitaciones por su compra </p>
         </div>
       ) : (
         <Formulario
