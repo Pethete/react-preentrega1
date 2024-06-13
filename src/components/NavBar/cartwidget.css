@@ -10,8 +10,8 @@
 }
 
 .cart-red {
-  color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
 }
-.cart-blue {
+.cart-white {
   color: rgba(255, 255, 255, 0.527);
 }

@@ -1,0 +1,5 @@
+.nav-item {
+  display: flex;
+  text-decoration: none;
+  font-size: 30px;
+}
